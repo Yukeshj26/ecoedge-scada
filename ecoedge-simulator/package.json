@@ -1,0 +1,23 @@
+{
+  "name": "ecoedge-simulator",
+  "version": "1.1.0",
+  "description": "EcoEdge ESP32-S3 edge node simulator — client SDK, no service account",
+  "main": "simulator.js",
+  "scripts": {
+    "start": "node simulator.js",
+    "start:fault:v+": "node simulator.js --fault=OVERVOLTAGE",
+    "start:fault:v-": "node simulator.js --fault=UNDERVOLTAGE",
+    "start:fault:temp": "node simulator.js --fault=OVERTEMP",
+    "start:fault:load": "node simulator.js --fault=HIGH_LOAD",
+    "start:fault:bat": "node simulator.js --fault=LOW_BATTERY",
+    "start:fast": "node simulator.js --interval=5000",
+    "start:node2": "node simulator.js --node=node_002",
+    "start:node3": "node simulator.js --node=node_003",
+    "start:multi": "node simulator.js --node=node_001 & node simulator.js --node=node_002 & node simulator.js --node=node_003"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "firebase": "^10.12.0",
+    "firebase-admin": "^13.8.0"
+  }
+}
